@@ -1,0 +1,121 @@
+# OLED Advanced Stats Display Script For Raspberry Pi  - Configuration File
+
+
+main:
+
+# Main definitions
+#
+#   showicons: yes, no (Is always required)
+#   mode: auto, manual (Is always required)
+#   autodelay: time in seconds (Disabled in manual mode)
+#   screensaver: Time in minutes, 0 for off (Disabled in auto mode)
+#
+# Examples:
+#
+#  showicons: "yes"
+#  mode: "auto"
+#  autodelay: "10"
+#
+#  showicons: "yes"
+#  mode: "manual"
+#  screensaver: "1"
+
+  showicons: "yes"
+  mode: "auto"
+  autodelay: "10"
+
+
+pages:
+
+# You can set up as many pages as you like,
+# but a minimum of two pages is required
+#
+# cpumem - Displays CPU and memory statistics
+#   type: cpumem
+#   icon: not supported (only one icon)
+#   value: not supported
+#
+# Example:
+#
+#  - type: "cpumem"
+
+  - type: "cpumem"
+
+# storage - Displays statistics from a mount point of your choice
+#   type: storage
+#   icon: emmc, hdd, sd, ssd (Just shows a different image)
+#   value: Your used mount point
+#
+# Example:
+#
+#  - type: "storage"
+#    icon: "sd"
+#    value: "/"
+
+  - type: "storage"
+    icon: "sd"
+    value: "/"
+  - type: "storage"
+    icon: "sd"
+    value: "/boot"
+
+# network - Displays network statistics from an interface of your choice
+#   type: network
+#   icon: lan, wifi (Just shows a different image)
+#   value: Your used interface (eth0, wlan0)
+#
+# Example:
+#
+#  - type: "network"
+#    icon: "lan"
+#    value: "eth0"
+
+  - type: "network"
+    icon: "wifi"
+    value: "wlan0"
+
+# docker - Displays Docker statistics
+#
+#   type: docker
+#   icon: not supported (only one icon)
+#   value: not supported
+#
+# Example:
+#
+#  - type: "docker"
+
+#  - type: "docker"
+
+
+buttons:
+
+# At least one button is required in manual mode.
+# Buttons are ignored in Auto mode.
+#
+#   type: pressed, hold
+#       pressed - Button with one function
+#       hold    - Button with two functions
+#   gpio: Your used GPIO pin
+#   func: next, previous
+#       next     - Go to the next page
+#       previous - Go to the previous page
+#   holdfunc: poweroff, reboot
+#       poweroff - Runs 'sudo poweroff'
+#       reboot   - Runs 'sudo reboot'
+#   holdtime: Time in seconds
+#
+# Examples:
+#
+#  - type: "pressed"
+#    gpio: "22"
+#    func: "next"
+#
+#  - type: "hold"
+#    gpio: "22"
+#    func: "next"
+#    holdfunc: "poweroff"
+#    holdtime: "5"
+#
+#  - type: "pressed"
+#    gpio: "23"
+#    func: "previous"
