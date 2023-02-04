@@ -491,7 +491,7 @@ class Storage:
                               font=FONT, fill=255, anchor="ra")
                     # Line 3 - Free space
                     DRAW.text((LEFT, LINE3), 'FREE', font=FONT, fill=255)
-                    if disk_usage.used / GB < 1:
+                    if disk_usage.free / GB < 1:
                         buffer = f'{round(disk_usage.free / MB, 3):.3f} MB'
                     else:
                         buffer = f'{round(disk_usage.free / GB, 3):.3f} GB'
@@ -499,7 +499,7 @@ class Storage:
                               font=FONT, fill=255, anchor="ra")
                     # Line 4 - Total space
                     DRAW.text((LEFT, LINE4), 'TOTAL', font=FONT, fill=255)
-                    if disk_usage.used / GB < 1:
+                    if disk_usage.total / GB < 1:
                         buffer = f'{round(disk_usage.total / MB, 3):.3f} MB'
                     else:
                         buffer = f'{round(disk_usage.total / GB, 3):.3f} GB'
