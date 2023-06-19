@@ -14,6 +14,7 @@
 The popular Raspberry Pi OLED Stats scripts tend to be very limited, so i created my own project.
 
 Features:
+- SSD1306 OLED Display I2C
 - Set up multiple pages of your choice
 - Auto mode: Flip through pages(Slideshow)
 - Manual mode: Controlled by at least one button
